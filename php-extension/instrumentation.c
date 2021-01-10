@@ -1,4 +1,5 @@
 #include "instrumentation.h"
+#include "instrument.h"
 
 ZEND_FUNCTION(hello_lobo_instrumentation) {
     php_printf("Hello from lobo_instrumentation.so!!\n");
@@ -21,6 +22,10 @@ PHP_MSHUTDOWN_FUNCTION(lobo_instrumentation) {
 
 PHP_RINIT_FUNCTION(lobo_instrumentation) {
     php_printf("In rinit function: %s\n", __func__);
+
+    // Instrument functions
+    instrument_log10();
+    
     return SUCCESS;
 }
 
