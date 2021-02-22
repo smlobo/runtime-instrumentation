@@ -1,4 +1,8 @@
 # jvmti-agent
 * Set JDK_HOME
-* Run with `cmake`
+* Build with `cmake`:
+    - mkdir build
+    - cd build
+    - cmake ..
+    - cmake --build .
 
